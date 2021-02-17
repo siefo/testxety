@@ -34,19 +34,7 @@ namespace MarketPriceGap
                 {
                     var market = GetMarketPrice(pair);
                     var price = GetPrice(pair);
-                    var gapPercent = GetPrcentAbs(market, price);
-                    //Console.WriteLine($"Pair: {pair} \r\nPriceGap: {gapPercent:##.##}");
 
-                    if (gapPercent >= 1m)
-                    {
-                        if (!gaplist.ContainsKey(pair))
-                        {
-                            gaplist.Add(pair, 0);
-                        }
-                        else
-                        {
-                            gaplist[pair]++;
-                            if (gaplist[pair] > 2)
                             {
                                 Console.WriteLine($"Pair: {pair} \r\nPriceGap: {gapPercent:##.##}");
                                 discord.Send(pair, $"Market price: {price}\r\nPrice: {price}\r\nGap: {gapPercent:##.##}%", Color.Gold);
