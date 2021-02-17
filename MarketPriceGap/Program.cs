@@ -79,6 +79,7 @@ namespace MarketPriceGap
         static decimal GetPrcentAbs(decimal value1, decimal value2)
         {
             var percentage = value1 / value2 * 100 - 100;
+            return percentage < 0 ? percentage * -1 : percentage;
         }
     }
 }
