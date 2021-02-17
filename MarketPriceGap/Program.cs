@@ -37,7 +37,7 @@ namespace MarketPriceGap
                     var gapPercent = GetPrcentAbs(market, price);
                     //Console.WriteLine($"Pair: {pair} \r\nPriceGap: {gapPercent:##.##}");
 
-                    if (gapPercent >= 0m)
+                    if (gapPercent >= 1m)
                     {
                         if (!gaplist.ContainsKey(pair))
                         {
